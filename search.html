@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Search & Reserve | Hotel Royale</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+
+  <!-- Page Header -->
+  <header>
+    <h1>Search & Reserve a Room</h1>
+    <p>Select your dates and room type to see available rooms.</p>
+  </header>
+
+  <!-- Search Form -->
+  <section class="search-box">
+    <label for="checkin">Check-in Date:</label>
+    <input type="date" id="checkin" required />
+    <br>
+    <label for="checkout">Check-out Date:</label>
+    <input type="date" id="checkout" required />
+    <br>
+    <label for="roomType">Room Type:</label>
+    <select id="roomType">
+      <option value="Single">Single</option>
+      <option value="Double">Double</option>
+      <option value="Suite">Suite</option>
+    </select>
+
+    <button onclick="searchRooms()">Search</button>
+  </section>
+
+  <!-- Room Results -->
+  <section class="results" id="results">
+    <!-- JavaScript will display available rooms here -->
+  </section>
+
+  <!-- Back to Home -->
+  <p style="text-align: center; margin-top: 2rem;">
+    <a href="index.html">⬅ Back to Home</a>
+  </p>
+
+  <!-- JavaScript -->
+  <script src="scripts/search.js"></script>
+</body>
+</html>
