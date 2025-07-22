@@ -1,7 +1,5 @@
 // This function runs when the user clicks "Search"
 function searchRooms() {
-    const checkin = document.getElementById("checkin").value;
-    const checkout = document.getElementById("checkout").value;
     const roomType = document.getElementById("roomType").value;
   
     if (!checkin || !checkout) {
@@ -13,8 +11,8 @@ function searchRooms() {
     const allRooms = [
       { type: "Single", number: 101, price: 100 },
       { type: "Double", number: 202, price: 150 },
-      { type: "Suite", number: 303, price: 250 },
-      { type: "Single", number: 102, price: 95 }
+      { type: "Luxury Suite", number: 303, price: 250 },
+      { type: "Presidential Suite", number: 102, price: 95 }
     ];
   
     // Filter rooms based on selected room type
