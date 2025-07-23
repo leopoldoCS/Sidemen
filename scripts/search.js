@@ -1,38 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Sidemen Hotel Booking</title>
-  <style>
-    body { font-family: sans-serif; padding: 20px; }
-    .room, .report-card { border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
-    h2 { margin-top: 40px; }
-  </style>
-</head>
-<body>
-  <h1>Sidemen Hotel</h1>
 
-  <!-- Room Search Form -->
-  <label for="roomType">Select Room Type:</label>
-  <select id="roomType">
-    <option value="Single">Single</option>
-    <option value="Double">Double</option>
-    <option value="Suite">Suite</option>
-  </select>
-  <button onclick="searchRooms()">Search Rooms</button>
-
-  <!-- Results Area -->
-  <div id="results"></div>
-
-  <hr>
-
-  <!-- Booking Report -->
-  <h2>Booking Report</h2>
-  <button onclick="generateBookingReport()">Show Bookings</button>
-  <div id="bookingReport"></div>
-
-  <script>
-    const bookings = [];
+   const bookings = [];
 
     function searchRooms() {
       const roomType = document.getElementById("roomType").value;
@@ -116,6 +83,4 @@
 
       console.log("Report generated:", bookings);
     }
-  </script>
-</body>
-</html>
+  
