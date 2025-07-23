@@ -8,7 +8,10 @@
         { type: "Single", number: 101, price: 100 },
         { type: "Double", number: 202, price: 150 },
         { type: "Suite", number: 303, price: 250 },
-        { type: "Single", number: 102, price: 95 }
+        { type: "Single", number: 102, price: 95 },
+        { type: "Luxury", number: 404, price: 350 },
+        { type: "Presidential", number: 505, price: 500 }
+
       ];
 
       const availableRooms = allRooms.filter(room => room.type === roomType);
