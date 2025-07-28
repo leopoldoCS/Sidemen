@@ -1,0 +1,340 @@
+body {
+  background-color: gold;
+  font-family: "Luxurious Roman", serif;
+  margin: 0; 
+  padding: 0; 
+}
+
+/* TOP NAVIGATION BAR */
+.top-border {
+  height: 125px;
+  background-color: navy;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  animation: AltAnimation 2s ease-out;
+  color: gold;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 0 1rem;  
+  box-sizing: border-box; 
+  overflow: hidden; 
+  flex-wrap: wrap; 
+}
+
+h1 {
+  font-size: 2.5rem; 
+  margin: 0; 
+  word-break: break-word;
+  max-width: 100%;
+  flex: 1;
+}
+
+p {
+  font-size: 1.25rem;
+  margin: 0; 
+  word-break: break-word;
+  max-width: 100%;
+  flex: 1;
+  text-align: right;
+}
+
+.nav-links {
+  display: flex; 
+  gap: 1.5rem; 
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.25rem; 
+  color: gold;
+}
+
+a:hover {
+  color: white;
+}
+
+@keyframes AltAnimation {
+  0% {
+    left: 100vw;
+    color: navy;
+  }
+  20% {
+    color: gold;
+  }
+  40% {
+    color: navy;
+  }
+  60% {
+    color: gold;
+  }
+  80% {
+    color: navy;
+  }
+  100% {
+    left: 0;
+    color: gold;
+  }
+}
+
+/* IMAGE SLIDER */
+.slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 125px;
+}
+
+.imageslider {
+  display: flex;
+  width: calc(50vw * 6); 
+  animation: slideLeft 12s linear infinite;
+}
+
+.imageslider img {
+  width: 50vw;
+  height: auto;
+  flex-shrink: 0;
+  margin-right: 0; 
+  border-right: 10px solid black; 
+  box-sizing: border-box; 
+}
+
+.imageslider img:last-child {
+  border-right: none; 
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/*STAFF PICTURES WITH DESCRIPTION*/
+.Staff {
+  padding: 2rem;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.StaffContent {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/*STORES IMAGES AND SLIDER DOTS*/
+.StaffImagesWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* FIXED SIZED FOR SLIDER BOX*/
+.StaffImages {
+  position: relative;
+  width: 700px;
+  height: 500px; 
+  border: 4px solid black;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+.StaffImages img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+  border-radius: 0.5rem;
+}
+
+/* IMAGE 1*/
+#staffslide1:checked ~ .StaffImagesWrapper .StaffImages img:nth-child(1) {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* IMAGE 2*/
+#staffslide2:checked ~ .StaffImagesWrapper .StaffImages img:nth-child(2) {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* SLIDER DOT PLACEMENT*/
+.slider-nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* DOT STYLE*/
+.slider-nav label {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: gray;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+
+#staffslide1:checked ~ .StaffImagesWrapper .slider-nav label[for="staffslide1"],
+#staffslide2:checked ~ .StaffImagesWrapper .slider-nav label[for="staffslide2"] {
+  background-color: gold;
+  border-color: black;
+}
+
+/* Description box on right */
+.StaffDescription {
+  max-width: 600px;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+  flex: 1 1 300px;
+}
+/*CHEF PICTURES WITH DESCRIPTION*/
+.Chef {
+  padding: 2rem;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.ChefContent {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction:row-reverse;
+}
+
+/* Wrapper for image box + dots */
+.ChefImagesWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Fixed square box for images */
+.ChefImages {
+  position: relative;
+  width: 700px;
+  height: 500px; /* square size */
+  border: 4px solid black;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* All images hidden and stacked */
+.ChefImages img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+  border-radius: 0.5rem;
+}
+
+/* Show image 1 when checked */
+#chefslide1:checked ~ .ChefImagesWrapper .ChefImages img:nth-child(1) {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* Show image 2 when checked */
+#chefslide2:checked ~ .ChefImagesWrapper .ChefImages img:nth-child(2) {
+  opacity: 1;
+  z-index: 2;
+}
+/* Show image 3 when checked */
+#chefslide3:checked ~ .ChefImagesWrapper .ChefImages img:nth-child(3) {
+  opacity: 1;
+  z-index: 2;
+}
+
+/*PLACEMENT OF SLIDER DOT*/
+.slider-nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/*STYLE OF DOT*/
+.slider-nav label {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: gray;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/*DOT*/
+#chefslide1:checked ~ .ChefImagesWrapper .slider-nav label[for="chefslide1"],
+#chefslide2:checked ~ .ChefImagesWrapper .slider-nav label[for="chefslide2"] {
+  background-color: gold;
+  border-color: black;
+}
+
+/* DESCRIPTION*/
+.ChefDescription {
+  max-width: 600px;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+  flex: 1 1 300px;
+}
+
+
+/* BOTTOM BAR */
+.bottom-border {
+  height: 225px;
+  background-color: navy;
+  width: 100%;
+  color: gold;
+  font-size: 1.50rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative; 
+  flex-direction: column;
+  padding: 1rem;
+}
+.bottom-border a{
+  color:aliceblue;
+}
+
+/* INFO SECTION */
+section {
+  max-width: 900px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* FOOTER */
+footer {
+align-items: center;
+  font-size: 0.9rem;
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+}

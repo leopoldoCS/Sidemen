@@ -1,0 +1,619 @@
+body {
+  background-color: gold;
+  font-family: "Luxurious Roman", serif;
+  margin: 0; 
+  padding-top: 125px;
+  
+}
+
+/* TOP NAVIGATION BAR */
+.top-border {
+  height: 125px;
+  background-color: navy;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  animation: AltAnimation 2s ease-out;
+  color: gold;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 0 1rem;  
+  box-sizing: border-box; 
+  overflow: hidden; 
+  flex-wrap: wrap; 
+}
+
+.titlereserve{
+    font-size: 50px;
+    color:navy;
+     text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem; 
+  margin: 0; 
+  word-break: break-word;
+  max-width: 100%;
+  flex: 1;
+}
+.invisibleboarder{
+  text-decoration: none;  
+  color: inherit;         
+  display: inline-block;  
+  border: none;          
+}
+
+p {
+  font-size: 1.25rem;
+  margin: 0; 
+  word-break: break-word;
+  max-width: 100%;
+  flex: 1;
+  text-align: right;
+}
+
+.nav-links {
+  display: flex; 
+  gap: 1.5rem; 
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.25rem; 
+  color: gold;
+}
+
+a:hover {
+  color: white;
+}
+
+
+/*--------------------------------------------SINGLE ROOM PICTURES WITH DESCRIPTION------------------------------------------*/
+.Single {
+  padding: 2rem;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.SingleContent {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/*STORES IMAGES AND SLIDER DOTS*/
+.SingleImagesWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* FIXED SIZED FOR SLIDER BOX*/
+.SingleImages {
+  position: relative;
+  width: 700px;
+  height: 500px; 
+  border: 4px solid black;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+.SingleImages img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+  border-radius: 0.5rem;
+}
+
+/* IMAGE 1*/
+#singleslide1:checked ~ .SingleImagesWrapper .SingleImages img:nth-child(1) {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* IMAGE 2*/
+#singleslide2:checked ~ .SingleImagesWrapper .SingleImages img:nth-child(2) {
+  opacity: 1;
+  z-index: 2;
+}
+/* IMAGE 3*/
+#singleslide3:checked ~ .SingleImagesWrapper .SingleImages img:nth-child(3) {
+  opacity: 1;
+  z-index: 2;
+}
+/* IMAGE 4*/
+#singleslide4:checked ~ .SingleImagesWrapper .SingleImages img:nth-child(4) {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* SLIDER DOT PLACEMENT*/
+.single-nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* DOT STYLE*/
+.single-nav label {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: gray;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+
+#singleslide1:checked ~ .SingleImagesWrapper .single-nav label[for="singleslide1"],
+#singleslide2:checked ~ .SingleImagesWrapper .single-nav label[for="singleslide2"],
+#singleslide3:checked ~ .SingleImagesWrapper .single-nav label[for="singleslide3"],
+#singleslide4:checked ~ .SingleImagesWrapper .single-nav label[for="singleslide4"] {
+  background-color: gold;
+  border-color: black;
+}
+
+/* Description box on right */
+.SingleDescription {
+  max-width: 600px;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+  flex: 1 1 300px;
+}
+/*BOOK NOW BUTTON*/
+.singlebook-button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: navy;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  color: white;
+  border: none;
+}
+
+.singlebook-button:hover {
+  background-color: white;
+  color:navy;
+}
+
+/*--------------------------------------------DOUBLE ROOM PICTURES WITH DESCRIPTION------------------------------------------*/
+.Double {
+  padding: 2rem;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.DoubleContent {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/*STORES IMAGES AND SLIDER DOTS*/
+.DoubleImagesWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* FIXED SIZED FOR SLIDER BOX*/
+.DoubleImages {
+  position: relative;
+  width: 700px;
+  height: 500px; 
+  border: 4px solid black;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+.DoubleImages img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+  border-radius: 0.5rem;
+}
+
+/* IMAGE 1*/
+#doubleslide1:checked ~ .DoubleImagesWrapper .DoubleImages img:nth-child(1) {
+  opacity: 1;
+  z-index: 2;
+}
+/* IMAGE 2*/
+#doubleslide2:checked ~ .DoubleImagesWrapper .DoubleImages img:nth-child(2) {
+  opacity: 1;
+  z-index: 2;
+}
+/* IMAGE 3*/
+#doubleslide3:checked ~ .DoubleImagesWrapper .DoubleImages img:nth-child(3) {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* SLIDER DOT PLACEMENT*/
+.doublenav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* DOT STYLE*/
+.doublenav label {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: gray;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+
+#doubleslide1:checked ~ .DoubleImagesWrapper .doublenav label[for="doubleslide1"],
+#doubleslide2:checked ~ .DoubleImagesWrapper .doublenav label[for="doubleslide2"],
+#doubleslide3:checked ~ .DoubleImagesWrapper .doublenav label[for="doubleslide3"]
+{
+  background-color: gold;
+  border-color: black;
+}
+
+/* Description box on right */
+.DoubleDescription {
+  max-width: 600px;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+  flex: 1 1 300px;
+}
+/*BOOK NOW BUTTON*/
+.doublebook-button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: navy;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  color: white;
+  border: none;
+}
+
+.doublebook-button:hover {
+  background-color: white;
+  color:navy;
+}
+
+/*--------------------------------------------SUITE ROOM PICTURES WITH DESCRIPTION------------------------------------------*/
+.Suite {
+  padding: 2rem;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.SuiteContent {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/*STORES IMAGES AND SLIDER DOTS*/
+.SuiteImagesWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* FIXED SIZED FOR SLIDER BOX*/
+.SuiteImages {
+  position: relative;
+  width: 700px;
+  height: 500px; 
+  border: 4px solid black;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+.SuiteImages img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+  border-radius: 0.5rem;
+}
+
+/* IMAGE 1*/
+#suiteslide1:checked ~ .SuiteImagesWrapper .SuiteImages img:nth-child(1) {
+  opacity: 1;
+  z-index: 2;
+}
+/* IMAGE 2*/
+#suiteslide2:checked ~ .SuiteImagesWrapper .SuiteImages img:nth-child(2) {
+  opacity: 1;
+  z-index: 2;
+}
+/* IMAGE 3*/
+#suiteslide3:checked ~ .SuiteImagesWrapper .SuiteImages img:nth-child(3) {
+  opacity: 1;
+  z-index: 2;
+}
+/* IMAGE 4*/
+#suiteslide4:checked ~ .SuiteImagesWrapper .SuiteImages img:nth-child(4) {
+  opacity: 1;
+  z-index: 2;
+}
+/* IMAGE 5*/
+#suiteslide5:checked ~ .SuiteImagesWrapper .SuiteImages img:nth-child(5) {
+  opacity: 1;
+  z-index: 2;
+}
+/* IMAGE 6*/
+#suiteslide6:checked ~ .SuiteImagesWrapper .SuiteImages img:nth-child(6) {
+  opacity: 1;
+  z-index: 2;
+}
+/* IMAGE 7*/
+#suiteslide7:checked ~ .SuiteImagesWrapper .SuiteImages img:nth-child(7) {
+  opacity: 1;
+  z-index: 2;
+}
+/* IMAGE 8*/
+#suiteslide8:checked ~ .SuiteImagesWrapper .SuiteImages img:nth-child(8) {
+  opacity: 1;
+  z-index: 2;
+}
+
+
+
+/* SLIDER DOT PLACEMENT*/
+.suitenav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* DOT STYLE*/
+.suitenav label {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: gray;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+
+#suiteslide1:checked ~ .SuiteImagesWrapper .suitenav label[for="suiteslide1"],
+#suiteslide2:checked ~ .SuiteImagesWrapper .suitenav label[for="suiteslide2"],
+#suiteslide3:checked ~ .SuiteImagesWrapper .suitenav label[for="suiteslide3"],
+#suiteslide4:checked ~ .SuiteImagesWrapper .suitenav label[for="suiteslide4"],
+#suiteslide5:checked ~ .SuiteImagesWrapper .suitenav label[for="suiteslide5"],
+#suiteslide6:checked ~ .SuiteImagesWrapper .suitenav label[for="suiteslide6"],
+#suiteslide7:checked ~ .SuiteImagesWrapper .suitenav label[for="suiteslide7"],
+#suiteslide8:checked ~ .SuiteImagesWrapper .suitenav label[for="suiteslide8"]
+{
+  background-color: gold;
+  border-color: black;
+}
+
+/* Description box on right */
+.SuiteDescription {
+  max-width: 600px;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+  flex: 1 1 300px;
+}
+/*BOOK NOW BUTTON*/
+.suitebook-button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: navy;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  color: white;
+  border: none;
+}
+
+.suitebook-button:hover {
+  background-color: white;
+  color:navy;
+}
+
+/*--------------------------------------------SUITE ROOM PICTURES WITH DESCRIPTION------------------------------------------*/
+.PresSuite {
+  padding: 2rem;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.PresSuiteContent {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/*STORES IMAGES AND SLIDER DOTS*/
+.PresSuiteImagesWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* FIXED SIZED FOR SLIDER BOX*/
+.PresSuiteImages {
+  position: relative;
+  width: 700px;
+  height: 500px; 
+  border: 4px solid black;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+.PresSuiteImages img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+  border-radius: 0.5rem;
+}
+
+/* IMAGE 1*/
+#psuitesSlide1:checked ~ .PresSuiteImagesWrapper .PresSuiteImages img:nth-child(1) {
+  opacity: 1;
+  z-index: 2;
+}
+/* IMAGE 2*/
+#psuitesSlide2:checked ~ .PresSuiteImagesWrapper .PresSuiteImages img:nth-child(2) {
+  opacity: 1;
+  z-index: 2;
+}
+/* IMAGE 3*/
+#psuitesSlide3:checked ~ .PresSuiteImagesWrapper .PresSuiteImages img:nth-child(3) {
+  opacity: 1;
+  z-index: 2;
+}
+/* IMAGE 4*/
+#psuitesSlide4:checked ~ .PresSuiteImagesWrapper .PresSuiteImages img:nth-child(4) {
+  opacity: 1;
+  z-index: 2;
+}
+/* IMAGE 5*/
+#psuitesSlide5:checked ~ .PresSuiteImagesWrapper .PresSuiteImages img:nth-child(5) {
+  opacity: 1;
+  z-index: 2;
+}
+/* IMAGE 6*/
+#psuitesSlide6:checked ~ .PresSuiteImagesWrapper .PresSuiteImages img:nth-child(6) {
+  opacity: 1;
+  z-index: 2;
+}
+
+/* SLIDER DOT PLACEMENT*/
+.PresSuiteNav{
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* DOT STYLE*/
+.PresSuiteNav label {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: gray;
+  border: 2px solid transparent;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+
+#psuitesSlide1:checked ~ .PresSuiteImagesWrapper .PresSuiteNav label[for="psuitesSlide1"],
+#psuitesSlide2:checked ~ .PresSuiteImagesWrapper .PresSuiteNav label[for="psuitesSlide2"],
+#psuitesSlide3:checked ~ .PresSuiteImagesWrapper .PresSuiteNav label[for="psuitesSlide3"],
+#psuitesSlide4:checked ~ .PresSuiteImagesWrapper .PresSuiteNav label[for="psuitesSlide4"],
+#psuitesSlide5:checked ~ .PresSuiteImagesWrapper .PresSuiteNav label[for="psuitesSlide5"],
+#psuitesSlide6:checked ~ .PresSuiteImagesWrapper .PresSuiteNav label[for="psuitesSlide6"]
+{
+  background-color: gold;
+  border-color: black;
+}
+
+/* Description box on right */
+.PresSuiteDescription {
+  max-width: 600px;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: left;
+  flex: 1 1 300px;
+}
+/*BOOK NOW BUTTON*/
+.pressuitebook-button {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: navy;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  color: white;
+  border: none;
+}
+
+.pressuitebook-button:hover {
+  background-color: white;
+  color:navy;
+}
+
+/* BOTTOM BAR */
+.bottom-border {
+  height: 225px;
+  background-color: navy;
+  width: 100%;
+  color: gold;
+  font-size: 1.50rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative; 
+  flex-direction: column;
+  padding: 1rem;
+}
+.bottom-border a{
+  color:aliceblue;
+}
+
+/* INFO SECTION */
+section {
+  max-width: 900px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* FOOTER */
+footer {
+align-items: center;
+  font-size: 0.9rem;
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+}
