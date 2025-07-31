@@ -1,0 +1,202 @@
+body {
+  background-color: #ffe357;
+  font-family: "Luxurious Roman", serif;
+  margin: 0; 
+  padding: 0; 
+}
+
+/* ------------------------------------------TOP NAVIGATION BAR --------------------------------------------------------------------------*/
+.top-border {
+  height: 125px;
+  background-color: navy;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  animation: AltAnimation 2s ease-out;
+  color: #ffe357;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 0 1rem;  
+  box-sizing: border-box; 
+  overflow: hidden; 
+  flex-wrap: wrap; 
+}
+
+h1 {
+  font-size: 2.5rem; 
+  margin: 0; 
+  word-break: break-word;
+  max-width: 100%;
+  flex: 1;
+}
+.invisibleboarder{
+  text-decoration: none;  
+  color: inherit;         
+  display: inline-block;  
+  border: none;          
+}
+
+p {
+  font-size: 1.25rem;
+  margin: 0; 
+  word-break: break-word;
+  max-width: 100%;
+  flex: 1;
+  text-align: right;
+}
+
+.nav-links {
+  display: flex; 
+  gap: 1.5rem; 
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.25rem; 
+  color: gold;
+}
+
+a:hover {
+  color: white;
+}
+
+/*-------------------------------TOTAL FOR STAY & CREDIT CARD INFORMATION--------------------------*/
+.Information{
+  margin-top:125px;
+  color:navy;
+  padding-left: 25px;
+  margin-bottom:125px;
+  
+}
+.TotalPage{
+  border-bottom: 5px solid navy;
+  padding-bottom: 5px;
+  width:500px;
+}
+.GuestPage{
+border-bottom: 5px solid navy;
+padding-bottom: 5px;
+width:500px;
+}
+.namesaligner{
+  display:flex;
+  gap:20px;
+}
+.namesaligner input{
+  font-size:16px;
+  height:20px;
+  margin-top: 20px;
+}
+.contactaligner{
+  display:flex;
+  gap:20px;
+}
+.contactaligner input{
+  font-size:16px;
+  height:20px;
+  margin-top: 20px;
+}
+.addyaligner{
+  display:flex;
+  gap:20px;
+}
+.addyaligner input{
+  font-size:16px;
+  height:20px;
+  margin-top: 20px;
+}
+.statealigner{
+  display:flex;
+  gap:20px;
+}
+.statealigner input{
+  font-size:16px;
+  height:20px;
+  margin-top: 20px;
+}
+
+.CardPage{
+border-bottom: 5px solid navy;
+padding-bottom: 5px;
+width:500px;
+}
+.CardAligner{
+  display:flex;
+  gap:20px;
+}
+.CardAligner input{
+  font-size:16px;
+  height:20px;
+  margin-top: 20px;
+}
+
+/*-----------------------------------PHOTO OF ROOM WITH ADRESS AND DESCRIPTION AT THE BOTTOM-------------------------*/
+.roompic{
+  color:navy;
+  position:absolute;
+  top:0;
+  right:0;
+  padding:10px;
+  top:135px;
+  
+}
+.roompic img{
+  width:700px;
+  height:auto;
+}
+
+/*CONFIRM STAY BUTTON*/
+.ConfirmButton {
+  margin-bottom: 50px;
+  margin-left: 10px;
+  padding: 25px 35px;
+  font-size: 35px;
+  background-color: navy;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+  color: white;
+  border: none;
+}
+
+.ConfirmButton:hover {
+  background-color: white;
+  color:navy;
+}
+/*-------------------------------------------------- BOTTOM BAR --------------------------------------------------------*/
+.bottom-border {
+  height: 225px;
+  background-color: navy;
+  width: 100%;
+  color: #ffe357;
+  font-size: 1.50rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  position: relative; 
+  flex-direction: column;
+  padding: 1rem;
+}
+.bottom-border a{
+  color:aliceblue;
+}
+
+/* INFO SECTION */
+section {
+  max-width: 900px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* FOOTER */
+footer {
+align-items: center;
+  font-size: 0.9rem;
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+}
