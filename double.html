@@ -19,7 +19,7 @@
 </div>
 
   <div class = "nav-links">
-      <a href="s&r.html">Search & Reserve a Room</a>
+      <a href="SandR.html">Search & Reserve a Room</a>
       <a href="manage.html">Manage Your Reservation</a>
       <a href="reports.html">Manager Reports</a>
   </div>
@@ -35,6 +35,33 @@
       <h3>Total Charge For Room</h3>
       <h3>Total Taxes</h3>
     </div>
+
+    <div id = "roomSpecificPrice" data-price="185"></div>
+
+    <!--PRICED INDICATED BY CALENDAR-->
+    <div class = pricesforstay>
+      <h2 id="TOTAL"> $0.00</h2>
+      <h2 id="STAY"> $0.00</h2>
+      <h2 id="TAX"> $0.00</h2>
+    </div>
+
+    <script>
+      let perNight = parseFloat(document.getElementById("roomSpecificPrice").dataset.price);
+      let total = localStorage.getItem("total");
+      let stayPrice = localStorage.getItem("stayPrice");
+      let taxOfTotal = localStorage.getItem("taxOfTotal");
+
+      if(total && stayPrice && taxOfTotal){
+        document.getElementById("TOTAL").textContent=`$${total}`;
+        document.getElementById("STAY").textContent=`$${stayPrice}`;
+        document.getElementById("TAX").textContent=`$${taxOfTotal}`;
+
+        localStorage.clear();
+      }else{
+        window.location.href = "SandR.html";
+      }
+    </script>
+
     <!--Guest Information-->
     <div class = "infoboxes">
   <div class = "GuestPage">

@@ -5,8 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sidemen Hotels/Reserve a Room</title>
-  <link rel="stylesheet" href="styles/s&r.css" />
+  <link rel="stylesheet" href="styles/SandR.css" />
   <link href="https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"/>
 </head>
 <body>
@@ -22,7 +23,7 @@
 
 
   <div class = "nav-links">
-      <a href="s&r.html">Search & Reserve a Room</a>
+      <a href="SandR.html">Search & Reserve a Room</a>
       <a href="manage.html">Manage Your Reservation</a>
       <a href="reports.html">Manager Reports</a>
   </div>
@@ -69,11 +70,30 @@
       <span>1</span>
       <i class="fa-solid fa-bath"></i>
       </div>
-      <div class = singlelink>
-        <a href="single.html">
-          <button class = "singlebook-button"> BOOK NOW</button>
-        </a>
-      </div>
+      <!--Book Now Button-->
+       
+          <button class = "singlebook-button" onclick="openCalendar(100,'single.html')"> BOOK NOW</button>
+
+    <!--CALENDAR DATE SELECTOR AFTER CLICKING BOOK NOW BUTTON-->
+          <div class ="calendarBackground" id="window">
+            <div class = "calendarInfo">
+              <h2> SELECT CHECK IN AND CHECK OUT DATE</h2>
+
+              <label for = "dates">Dates: </label><br>
+              <input type = "text" id="dates" placeholder="SELECT CHECK IN AND CHECK OUT DATES"><br>
+
+              <div class = "calendarPop">
+                <button class = "CONFIRM" onclick="confirmVacation()"> CONFIRM STAY</button>
+              </div>
+            </div>
+          </div>
+      
+      <!--JsScritps-->
+      <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+      <script src ="calendar.js"></script>
+      
+
+    </div>
     </div>
 
   </div>
@@ -112,10 +132,29 @@
       <span>1</span>
       <i class="fa-solid fa-bath"></i>
       </div>
-      <div class = doublelink>
-        <a href="double.html">
-          <button class = "doublebook-button"> BOOK NOW</button>
-        </a>
+
+      <!--Book Now Button-->
+       
+          <button class = "singlebook-button" onclick="openCalendar(185,'double.html')"> BOOK NOW</button>
+
+    <!--CALENDAR DATE SELECTOR AFTER CLICKING BOOK NOW BUTTON-->
+          <div class ="calendarBackground" id="window">
+            <div class = "calendarInfo">
+              <h2> SELECT CHECK IN AND CHECK OUT DATE</h2>
+
+              <label for = "dates">Dates: </label><br>
+              <input type = "text" id="dates" placeholder="SELECT CHECK IN AND CHECK OUT DATES"><br>
+
+              <div class = "calendarPop">
+                <button class = "CONFIRM" onclick="confirmVacation()"> CONFIRM STAY</button>
+              </div>
+            </div>
+          </div>
+      
+      <!--JsScritps-->
+      <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+      <script src ="calendar.js"></script>
+
       </div>
     </div>
 
@@ -171,10 +210,27 @@
       <span>2</span>
       <i class="fa-solid fa-bath"></i>
       </div>
-      <div class = suitelink>
-        <a href="suite.html">
-          <button class = "suitebook-button"> BOOK NOW</button>
-        </a>
+      <!--Book Now Button-->
+       
+          <button class = "singlebook-button" onclick="openCalendar(300,'suite.html')"> BOOK NOW</button>
+
+    <!--CALENDAR DATE SELECTOR AFTER CLICKING BOOK NOW BUTTON-->
+          <div class ="calendarBackground" id="window">
+            <div class = "calendarInfo">
+              <h2> SELECT CHECK IN AND CHECK OUT DATE</h2>
+
+              <label for = "dates">Dates: </label><br>
+              <input type = "text" id="dates" placeholder="SELECT CHECK IN AND CHECK OUT DATES"><br>
+
+              <div class = "calendarPop">
+                <button class = "CONFIRM" onclick="confirmVacation()"> CONFIRM STAY</button>
+              </div>
+            </div>
+          </div>
+      
+      <!--JsScritps-->
+      <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+      <script src ="calendar.js"></script>
       </div>
     </div>
 
@@ -224,12 +280,31 @@
       <span>8</span>
       <i class="fa-solid fa-bath"></i>
     </div>
-    <div class = pressuitelink>
-        <a href="pressuite.html">
-          <button class = "pressuitebook-button"> BOOK NOW</button>
-        </a>
-      </div>
 
+    <!--Book Now Button-->
+       
+          <button class = "singlebook-button" onclick="openCalendar(500,'pressuite.html')"> BOOK NOW</button>
+
+    <!--CALENDAR DATE SELECTOR AFTER CLICKING BOOK NOW BUTTON-->
+          <div class ="calendarBackground" id="window">
+            <div class = "calendarInfo">
+              <h2> SELECT CHECK IN AND CHECK OUT DATE</h2>
+
+              <label for = "dates">Dates: </label><br>
+              <input type = "text" id="dates" placeholder="SELECT CHECK IN AND CHECK OUT DATES"><br>
+
+              <div class = "calendarPop">
+                <button class = "CONFIRM" onclick="confirmVacation()"> CONFIRM STAY</button>
+              </div>
+            </div>
+          </div>
+      
+      <!--JsScritps-->
+      <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+      <script src ="calendar.js"></script>
+
+    </div>
+</div>
   </div>
 </section>
 
