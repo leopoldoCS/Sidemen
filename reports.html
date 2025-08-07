@@ -2,42 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sidemen Hotel - Search & Reserve</title>
+  <title>Sidemen Hotel - Booking Reports</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles/style.css" />
+
+  <!-- Optional inline styles for report layout -->
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f2f2f2;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    #bookingReport {
+      margin-top: 30px;
+    }
+
+    .report-card {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .report-card p {
+      margin: 6px 0;
+    }
+
+    .report-card h3 {
+      margin: 0 0 10px 0;
+      color: #444;
+    }
+
+    .back-link {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .back-link a {
+      color: #0077cc;
+      text-decoration: none;
+    }
+
+    .back-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Page Header -->
-  <header>
-    <h1>Search & Reserve a Room</h1>
-    <p>Select your dates and room type to see available rooms.</p>
-  </header>
+  <h1>Customer Booking Reports</h1>
 
-  <!-- Search Form -->
-  <section class="search-box">
-    <label for="roomType">Room Type:</label>
-    <select id="roomType">
-      <option value="Single">Single</option>
-      <option value="Double">Double</option>
-      <option value="Luxury Suite">Luxury</option>
-      <option value="Presidential Suite">Presidential</option>
-    </select>
+  <div id="bookingReport"></div>
 
-    <button onclick="searchRooms()">Search</button>
-  </section>
+  <div class="back-link">
+    <p><a href="homepage.html">← Back to Home</a></p>
+  </div>
 
-  <!-- Room Results -->
-  <section class="results" id="results">
-    <!-- JavaScript will display available rooms here -->
-  </section>
-
-  <!-- Back to Home -->
-  <p style="text-align: center; margin-top: 2rem;">
-    <a href="index.html">⬅ Back to Home</a>
-  </p>
-
-  <!-- JavaScript -->
+  <!-- Load the JS file -->
   <script src="scripts/reports.js"></script>
 </body>
 </html>
