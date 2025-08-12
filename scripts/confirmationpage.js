@@ -4,17 +4,20 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!confirmBtn) return;
 
   confirmBtn.addEventListener("click", function () {
-    // Automatically infer room type from page title or fallback to 'Room'
+    // Get basic room info
     const roomType = document.title.includes("Reserve") ? document.title.split("/")[1] : "Room";
     const roomPrice = document.getElementById("roomSpecificPrice").dataset.price;
 
+    // Get dates
     const checkin = document.getElementById("checkin")?.value || "";
     const checkout = document.getElementById("checkout")?.value || "";
 
+    // Get price breakdown
     const total = document.getElementById("TOTAL").textContent;
     const stay = document.getElementById("STAY").textContent;
     const tax = document.getElementById("TAX").textContent;
 
+    // Get guest info
     const booking = {
       room: roomType,
       roomPrice: `$${roomPrice}`,
@@ -41,22 +44,12 @@ document.addEventListener("DOMContentLoaded", function () {
       timestamp: new Date().toISOString()
     };
 
-    fetch("http://localhost:3000/api/bookings", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(booking)
-    })
-      .then(res => res.json())
-      .then(data => {
-        alert("Booking confirmed! Redirecting...");
-        window.location.href = "confirmation.html";
-      })
-      .catch(err => {
-        console.error("Error:", err);
-        alert("Booking failed. Please try again.");
-      });
+    // Save booking to localStorage for manager reports
+    const bookings = JSON.parse(localStorage.getItem("reports") || "[]");
+    bookings.push(booking);
+    localStorage.setItem("reports", JSON.stringify(bookings));
+
+    // Redirect to confirmation page
+    window.location.href = "confirm.html";
   });
 });
-
