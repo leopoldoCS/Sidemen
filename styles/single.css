@@ -204,3 +204,191 @@ align-items: center;
   border-top: 0.0625rem solid #ddd;
   padding-top: 1rem;
 } /*HELLO*/
+
+/*-------------------------FOR THE CODE TO ADAPT TO ALL SCREEN SIZES-------->
+/*1920*/
+@media(max-width:1920px){
+.top-border {
+  height: 8rem;
+}
+.top-border h1{
+font-size: 3rem;
+}
+.top-border p{
+ font-size: 1.9rem;
+}
+.top-border a{
+  font-size: 1.8rem;
+}
+.TotalPage, .GuestPage, .CardPage{
+  width:43rem;
+}
+.Information{
+  margin-bottom:3rem;
+}
+.Information h1{
+  font-size:4rem;
+}
+.Information h2{
+  font-size:2rem;
+}
+.Information h3{
+  font-size:2rem;
+}
+.Information input{
+  font-size:1.4rem;
+  width:14rem;
+  height:3rem;
+}
+.pricesforstay{
+  font-size: 0.9rem;
+  margin: -13rem 0rem 0rem 35rem;
+}
+.roompic img{
+  width:45rem;
+  height:auto;
+}
+.roompic h2{
+font-size: 3rem;
+}
+.roompic h3{
+ font-size: 1.5rem;
+}
+.bottom-border section {
+  max-width: 90rem;
+
+}
+.bottom-border {
+  height: 20rem;
+}
+.bottom-border h2{
+  font-size: 3rem;
+}
+.bottom-border p{
+  font-size: 2rem;
+}
+}
+
+/*1680 CSS WAS MADE IN THIS SO ORIGINAL*/
+
+/*1440*/
+@media(max-width:1440px){
+.top-border {
+  height: 7rem;
+}
+.Information{
+  margin-bottom:3rem;
+}
+.Information h1{
+  font-size:2rem;
+}
+.Information input{
+  font-size:0.88rem;
+}
+.roompic img{
+  width:33rem;
+  height:auto;
+}
+.bottom-border {
+  height: 12rem;
+}
+}
+
+/*1280*/
+@media(max-width:1280px){
+.top-border {
+  height: 7rem;
+}
+.Information{
+  margin-bottom:3rem;
+}
+.Information h1{
+  font-size:2rem;
+}
+.Information input{
+  font-size:0.8rem;
+}
+.roompic img{
+  width:29rem;
+  height:auto;
+  margin-right:1rem;
+}
+.roompic h2{
+  width:30rem;
+  font-size: 2rem;
+  margin-top:0.2rem;
+}
+.roompic h3{
+  margin-top:-1rem;
+  width:30rem;
+}
+.bottom-border {
+  height: 12rem;
+}
+}
+
+/*1024*/
+@media(max-width:1024px){
+.top-border {
+  height: 4.1rem;
+}
+.top-border h1 {
+font-size:1.7rem;
+}
+.top-border p {
+font-size:0.9rem;
+}
+.top-border a{
+font-size:0.9rem;
+}
+.Information{
+  margin-bottom:3rem;
+  margin-top:4.1rem;
+}
+.Information h1{
+  font-size:1.7rem;
+}
+.Information h3{
+  font-size:1rem;
+}
+.Information input{
+  width:7.2rem;
+}
+.pricesforstay{
+  font-size: 0.9rem;
+  margin: -7.5rem 0rem 0rem 26rem;
+}
+.Information input{
+  font-size:0.8rem;
+}
+.roompic{
+  margin:-4.7rem -10rem 0rem 0rem;
+}
+.roompic img{
+  width:20rem;
+  height:auto;
+}
+.roompic h2{
+  font-size: 1.5rem;
+  margin-top:0.2rem;
+}
+.roompic h3{
+  margin-top:-1rem;
+  max-width:20rem;
+  font-size: 1rem;
+}
+.ConfirmButton {
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 1.5rem;
+}
+.bottom-border {
+  height: 8rem;
+}
+.bottom-border h2{
+  font-size: 1rem;
+}
+.bottom-border p{
+  font-size: 1rem;
+}
+body{overflow-x: hidden;}
+}
