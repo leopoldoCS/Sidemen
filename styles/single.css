@@ -137,7 +137,6 @@ width:31.25rem;
   height:1.25rem;
   margin-top: 1.25rem;
 }
-
 /*-----------------------------------PHOTO OF ROOM WITH ADRESS AND DESCRIPTION AT THE BOTTOM-------------------------*/
 .roompic{
   color:navy;
@@ -207,7 +206,7 @@ align-items: center;
 
 /*-------------------------FOR THE CODE TO ADAPT TO ALL SCREEN SIZES-------->
 /*1920*/
-@media(max-width:1920px){
+@media(min-width:1920px){
 .top-border {
   height: 8rem;
 }
