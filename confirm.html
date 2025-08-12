@@ -7,45 +7,23 @@
   <link rel="stylesheet" href="styles/confirmation.css">
 </head>
 <body>
-  <header>
-    <h1>Sidemen Hotel Suites</h1>
-    <p>Your booking has been confirmed!</p>
-  </header>
-
-  <main>
-    <section id="confirmationDetails">
-      <h2>Booking Details</h2>
-      <div id="bookingInfo"></div>
-    </section>
-
-    <a href="homepage.html" class="btn">Return to Homepage</a>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Sidemen Hotel Suites. All rights reserved.</p>
-  </footer>
+  <h1>Booking Confirmed!</h1>
+  <div id="confirmationDetails"></div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const bookingInfo = document.getElementById("bookingInfo");
-      const bookings = JSON.parse(localStorage.getItem("reports") || "[]");
+    const booking = JSON.parse(localStorage.getItem("lastBooking") || "{}");
 
-      if (bookings.length === 0) {
-        bookingInfo.innerHTML = "<p>No booking details found.</p>";
-        return;
-      }
-
-      const b = bookings[bookings.length - 1]; // last booking
-      const g = b.guest || {};
-      bookingInfo.innerHTML = `
-        <p><strong>Name:</strong> ${g.firstName || ""} ${g.lastName || ""}</p>
-        <p><strong>Email:</strong> ${g.email || ""}</p>
-        <p><strong>Room:</strong> ${b.room || ""}</p>
-        <p><strong>Check-in:</strong> ${b.checkin || ""}</p>
-        <p><strong>Check-out:</strong> ${b.checkout || ""}</p>
-        <p><strong>Total Price:</strong> ${b.total || ""}</p>
+    if (booking.room) {
+      document.getElementById("confirmationDetails").innerHTML = `
+        <p><strong>Room:</strong> ${booking.room}</p>
+        <p><strong>Price:</strong> ${booking.roomPrice}</p>
+        <p><strong>Total:</strong> ${booking.total}</p>
+        <p><strong>Name:</strong> ${booking.guest.firstName} ${booking.guest.lastName}</p>
+        <p><strong>Email:</strong> ${booking.guest.email}</p>
       `;
-    });
+    } else {
+      document.getElementById("confirmationDetails").innerHTML = `<p>No booking found.</p>`;
+    }
   </script>
 </body>
 </html>

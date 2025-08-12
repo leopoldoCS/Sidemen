@@ -4,50 +4,42 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!confirmBtn) return;
 
   confirmBtn.addEventListener("click", function () {
-    // Get basic room info
-    const roomType = document.title.includes("Reserve") ? document.title.split("/")[1] : "Room";
-    const roomPrice = document.getElementById("roomSpecificPrice").dataset.price;
+    // Room type from title (Reserve/Double → Double)
+    const roomType = document.title.includes("/") 
+      ? document.title.split("/")[1] 
+      : "Room";
 
-    // Get dates
-    const checkin = document.getElementById("checkin")?.value || "";
-    const checkout = document.getElementById("checkout")?.value || "";
-
-    // Get price breakdown
-    const total = document.getElementById("TOTAL").textContent;
-    const stay = document.getElementById("STAY").textContent;
-    const tax = document.getElementById("TAX").textContent;
-
-    // Get guest info
     const booking = {
       room: roomType,
-      roomPrice: `$${roomPrice}`,
-      total,
-      stay,
-      tax,
-      checkin,
-      checkout,
+      roomPrice: `$${document.getElementById("roomSpecificPrice").dataset.price}`,
+      total: document.getElementById("TOTAL").textContent,
+      stay: document.getElementById("STAY").textContent,
+      tax: document.getElementById("TAX").textContent,
       guest: {
-        firstName: document.getElementById("name")?.value || "",
-        lastName: document.getElementById("lastname")?.value || "",
-        email: document.getElementById("email")?.value || "",
-        phone: document.getElementById("phone")?.value || "",
-        address: document.getElementById("address")?.value || "",
-        zip: document.getElementById("zip")?.value || "",
-        city: document.getElementById("city")?.value || "",
-        state: document.getElementById("state")?.value || ""
+        firstName: document.getElementById("name").value,
+        lastName: document.getElementById("lastname")?.value || "", // Fix to support missing lastname field ID
+        email: document.getElementById("email").value,
+        phone: document.getElementById("phone").value,
+        address: document.getElementById("address").value,
+        zip: document.getElementById("zip").value,
+        city: document.getElementById("city").value,
+        state: document.getElementById("state").value
       },
       card: {
-        number: document.getElementById("cardnumber")?.value || "",
-        month: document.getElementById("month")?.value || "",
-        year: document.getElementById("Year")?.value || ""
+        number: document.getElementById("cardnumber").value,
+        month: document.getElementById("month").value,
+        year: document.getElementById("Year").value
       },
       timestamp: new Date().toISOString()
     };
 
-    // Save booking to localStorage for manager reports
-    const bookings = JSON.parse(localStorage.getItem("reports") || "[]");
-    bookings.push(booking);
-    localStorage.setItem("reports", JSON.stringify(bookings));
+    // Save to localStorage for reports
+    let reports = JSON.parse(localStorage.getItem("reports") || "[]");
+    reports.push(booking);
+    localStorage.setItem("reports", JSON.stringify(reports));
+
+    // Save current booking for confirmation page
+    localStorage.setItem("lastBooking", JSON.stringify(booking));
 
     // Redirect to confirmation page
     window.location.href = "confirm.html";
