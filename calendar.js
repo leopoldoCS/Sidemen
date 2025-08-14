@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /*THIS FILE CONTROLS THE CALENDAR DATE SELECTOR POPUP
 
 Author: Leo
@@ -14,9 +14,9 @@ It has one function: confirmVacation()
 
 
 
-=======
-/*THIS FILE CONTROLS THE CALENDAR DATE SELECTOR POPUP*/ /*/
->>>>>>> bcf81c0c0414b92183e8346633da137d7d4c836c
+
+/*THIS FILE CONTROLS THE CALENDAR DATE SELECTOR POPUP*/ 
+
 
 //OPENS WINDOW
 function openCalendar(price, pageLink){
