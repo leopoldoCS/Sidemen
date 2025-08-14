@@ -1,4 +1,16 @@
+
+
 <?php
+/*
+
+Author: Rajvir
+
+Date: 8/13/2025
+
+This a database class used to connect to the database with PHP. It has one connect method that has no arguments but creates the connection
+with the database based on literals that are inputted directly into the code. It provides a message whether a connection was established.
+
+*/
 
 class Database
 {
@@ -24,6 +36,7 @@ class Database
         }
 
         echo "Connected successfully";
+    
 
         return $conn;
     }

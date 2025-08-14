@@ -1,11 +1,25 @@
-/*THIS FILE CONTROLS THE CALENDAR DATE SELECTOR POPUP*/
+/*THIS FILE CONTROLS THE CALENDAR DATE SELECTOR POPUP
+
+Author: Leo
+
+Date: 8/1/2025
+
+The code handles the interactive caldner used to pick booking dates and also handles the logic for calculating the final price of the booking.
+
+It uses an array data structure.
+
+It has one function: confirmVacation()
+*/
+
+
+
 
 //OPENS WINDOW
 function openCalendar(price, pageLink){
         perNight= price;
         urlBack = pageLink;
         document.getElementById("window").style.display="block";
-      }
+}
 
         /*-----------------------PRICES FOR SINGLE STAY CALULATED BY CALENDAR----------------------------*/
       let numOfDays=[];

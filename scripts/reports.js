@@ -1,3 +1,14 @@
+/*
+8/7/205
+
+Author: Ali
+
+Performs actions related to displaying the bookings
+
+THe code gets the customers bookings and displays them. It handles the logic of whether there is something to display and outputs in html.
+
+*/
+
 document.addEventListener("DOMContentLoaded", function () {
   const reportContainer = document.getElementById("bookingReport");
 

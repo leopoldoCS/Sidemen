@@ -1,4 +1,13 @@
 
+/*
+
+Author: Rajvir
+
+Date: 8/13/2025
+
+The code connects to a database via node.js
+
+*/
 const express = require('express');
 const path = require('path');
 const mysql2 = require('mysql2');
