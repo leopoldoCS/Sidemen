@@ -8,6 +8,7 @@ Date: 8/13/2025
 The code connects to a database via node.js
 
 */
+
 const express = require('express');
 const path = require('path');
 const mysql2 = require('mysql2');
@@ -33,5 +34,9 @@ database.connect((error) => {
 app.get('/', (req, res) =>{
     const htmlfile = path.join(__dirname, 'index.html');
     res.sendFile(htmlfile);
+})
+
+app.listen(4000, () => {
+    console.log("Server listening...")
 })
 
