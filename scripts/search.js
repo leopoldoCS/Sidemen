@@ -74,7 +74,10 @@ The code utilizes an array of bookings.
       console.log("Booking added:", booking); //
       alert(`Booking confirmed for ${customerName}. Confirmation sent to ${email}.`);
     }
-
+   /**
+    * 
+    * @returns empty test search.js
+    */
     function generateBookingReport() {
       const reportDiv = document.getElementById("bookingReport");
 
