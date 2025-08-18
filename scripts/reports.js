@@ -9,6 +9,7 @@ THe code gets the customers bookings and displays them. It handles the logic of 
 
 */
 
+
 document.addEventListener("DOMContentLoaded", function () {
   const reportContainer = document.getElementById("bookingReport");
   if (!reportContainer) {

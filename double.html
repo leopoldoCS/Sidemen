@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,39 +8,40 @@
   <link rel="stylesheet" href="styles/double.css" />
   <link href="https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <!----------------------------------BAR WHICH INCLUDES TITLE,QUOTE< AND THREE OPTIONS-------------------->
-  <div class ="top-border">
+  <!----------------------------------BAR WHICH INCLUDES TITLE,QUOTE< AND THREE OPTIONS-------------------->
+  <div class="top-border">
 
-    <div class ="brand">
-  <a href ="homepage.html" class = "invisibleboarder">
-  <h1> SIDEMEN HOTEL SUITES</h1>
-  <p>LUXURY LIKE YOU HAVE NEVER SEEN BEFORE</p>
-  </a>
-</div>
+    <div class="brand">
+      <a href="homepage.html" class="invisibleboarder">
+        <h1> SIDEMEN HOTEL SUITES</h1>
+        <p>LUXURY LIKE YOU HAVE NEVER SEEN BEFORE</p>
+      </a>
+    </div>
 
-  <div class = "nav-links">
+    <div class="nav-links">
       <a href="SandR.html">Search & Reserve a Room</a>
       <a href="manage.html">Manage Your Reservation</a>
       <a href="reports.html">Manager Reports</a>
+    </div>
   </div>
-  </div>
-<!--------------------------------------------TOTAL FOR STAY & CREDIT CARD INFORMATION--------------------------------->
-<div class = "Information">
-   <!--TOTAL-->
-  <div class="TotalPage">
-    <h1>Total</h1>
-  </div>
-  <div class ="TotalPageInfo">
+  <!--------------------------------------------TOTAL FOR STAY & CREDIT CARD INFORMATION--------------------------------->
+  <div class="Information">
+    <!--TOTAL-->
+    <div class="TotalPage">
+      <h1>Total</h1>
+    </div>
+    <div class="TotalPageInfo">
       <h2>Total For Stay</h1>
-      <h3>Total Charge For Room</h3>
-      <h3>Total Taxes</h3>
+        <h3>Total Charge For Room</h3>
+        <h3>Total Taxes</h3>
     </div>
 
-    <div id = "roomSpecificPrice" data-price="185"></div>
+    <div id="roomSpecificPrice" data-price="185"></div>
 
     <!--PRICED INDICATED BY CALENDAR-->
-    <div class = pricesforstay>
+    <div class=pricesforstay>
       <h2 id="TOTAL"> $0.00</h2>
       <h2 id="STAY"> $0.00</h2>
       <h2 id="TAX"> $0.00</h2>
@@ -51,106 +53,110 @@
       let stayPrice = localStorage.getItem("stayPrice");
       let taxOfTotal = localStorage.getItem("taxOfTotal");
 
-      if(total && stayPrice && taxOfTotal){
-        document.getElementById("TOTAL").textContent=`$${total}`;
-        document.getElementById("STAY").textContent=`$${stayPrice}`;
-        document.getElementById("TAX").textContent=`$${taxOfTotal}`;
+      if (total && stayPrice && taxOfTotal) {
+        document.getElementById("TOTAL").textContent = `$${total}`;
+        document.getElementById("STAY").textContent = `$${stayPrice}`;
+        document.getElementById("TAX").textContent = `$${taxOfTotal}`;
 
         localStorage.clear();
-      }else{
+      } else {
         window.location.href = "SandR.html";
       }
     </script>
 
     <!--Guest Information-->
-    <div class = "infoboxes">
-  <div class = "GuestPage">
-    <h1>Guest Information</h1>
+    <form action="submitReservation.php" method="post">
+      <div class="infoboxes">
+        <div class="GuestPage">
+          <h1>Guest Information</h1>
+        </div>
+        <div class="GuestPageInfo">
+
+          <div class="namesaligner">
+            <h3>First Name</h3>
+            <label for="infoboxes"></label>
+            <input type="text" id="name" name="first_name" placeholder="First Name">
+            <h3>Last Name</h3>
+            <label for="infoboxes"></label>
+            <input type="text" id="name" name="last_name" placeholder="Last Name">
+          </div>
+
+          <div class="contactaligner">
+            <h3>Email</h3>
+            <label for="infoboxes"></label>
+            <input type="text" id="email" name="email" placeholder="Email">
+            <h3>Phone</h3>
+            <label for="infoboxes"></label>
+            <input type="text" id="phone" name="phone" placeholder="(123)-456-7890">
+          </div>
+
+          <div class="addyaligner">
+            <h3>Address</h3>
+            <label for="infoboxes"></label>
+            <input type="text" id="address" name="address" placeholder="123 St Place Blvd">
+            <h3>ZIP</h3>
+            <label for="infoboxes"></label>
+            <input type="text" id="zip" name="zip" placeholder="12345">
+            <h3>City</h3>
+            <label for="infoboxes"></label>
+            <input type="text" id="city" name="city" placeholder="City">
+          </div>
+          <div class="statealigner">
+            <h3>State</h3>
+            <label for="infoboxes"></label>
+            <input type="text" id="state" name="state" placeholder="State">
+          </div>
+
+        </div>
+        <!--Card Information-->
+        <div class="CardPage">
+          <h1>Card Information</h1>
+        </div>
+        <div class="CardPageInfo">
+          <div class="CardAligner">
+            <h3>Card Number</h3>
+            <label for="infoboxes"></label>
+            <input type="text" id="cardnumber" name="cardnumber" placeholder="xxxx xxxx xxxx xxxx">
+            <h3>Month</h3>
+            <label for="infoboxes"></label>
+            <input type="text" id="month" name="month" placeholder="Month">
+            <h3>Year</h3>
+            <label for="infoboxes"></label>
+            <input type="text" id="Year" name="year" placeholder="Year">
+          </div>
+        </div>
+      </div>
   </div>
-  <div class = "GuestPageInfo">
-
-    <div class = "namesaligner">
-    <h3>First Name</h3>
-    <label for= "infoboxes"></label>
-    <input type="text" id="name" name="name" placeholder="First Name">
-    <h3>Last Name</h3>
-    <label for= "infoboxes"></label>
-    <input type="text" id="name" name="name" placeholder="Last Name">
-    </div>
-
-    <div class = "contactaligner">
-    <h3>Email</h3>
-    <label for= "infoboxes"></label>
-    <input type="text" id="email" name ="email" placeholder="Email">
-    <h3>Phone</h3>
-    <label for= "infoboxes"></label>
-    <input type="text" id="phone" name="phone" placeholder="(123)-456-7890">
-    </div>
-
-    <div class= "addyaligner">
-    <h3>Address</h3>
-    <label for= "infoboxes"></label>
-    <input type="text" id="address" name="address" placeholder="123 St Place Blvd">
-    <h3>ZIP</h3>
-    <label for= "infoboxes"></label>
-    <input type="text" id="zip" name="zip" placeholder="12345">
-    <h3>City</h3>
-    <label for= "infoboxes"></label>
-    <input type="text" id="city" name="city" placeholder="City">
-    </div>
-    <div class = "statealigner">
-    <h3>State</h3>
-    <label for= "infoboxes"></label>
-    <input type="text" id="state" name="state" placeholder="State">
-    </div>
-    
   </div>
-  <!--Card Information-->
-  <div class = "CardPage">
-    <h1>Card Information</h1>
-    </div>
-    <div class = "CardPageInfo">
-      <div class="CardAligner">
-    <h3>Card Number</h3>
-    <label for= "infoboxes"></label>
-    <input type="text" id="cardnumber" name="cardnumber" placeholder="xxxx xxxx xxxx xxxx">
-    <h3>Month</h3>
-    <label for= "infoboxes"></label>
-    <input type="text" id="month" name="month" placeholder="Month">
-    <h3>Year</h3>
-    <label for= "infoboxes"></label>
-    <input type="text" id="Year" name="year" placeholder="Year">
-    </div>
-    </div>
+  <input type="submit" name="doubleSubmit" class="ConfirmButton" value="Submit Information">
+  </form>
+  <!-----------------------------------PHOTO OF ROOM WITH ADRESS AND DESCRIPTION AT THE BOTTOM------------------------->
+  <div class="roompic">
+    <img src="styles/HotelPictures/Double/Double2.png" />
+    <h2>Sidemen Hotel Suites</h2>
+    <h3>Double Room - 2 Person, 2 Bed, 1 Shower (NON-SMOKING)</h3>
+    <h3> 123 St Freeway Blvd, Los Angeles, California</h3>
   </div>
-  </div>
-</div>
-<!-----------------------------------PHOTO OF ROOM WITH ADRESS AND DESCRIPTION AT THE BOTTOM------------------------->
-<div class = "roompic">
-  <img src = "styles/HotelPictures/Double/Double2.png"/>
-  <h2>Sidemen Hotel Suites</h2>
-  <h3>Double Room - 2 Person, 2 Bed, 1 Shower (NON-SMOKING)</h3>
-  <h3> 123 St Freeway Blvd, Los Angeles, California</h3>
-</div>
-<!------------------------CONFIRM STAY Button------------------->
+  <!------------------------CONFIRM STAY Button------------------->
 
 
-  <button class = "ConfirmButton">CONFIRM STAY</button>
+  <button class="ConfirmButton">CONFIRM STAY</button>
 
   <!--------------------------------------- About Section or Hotel Description ------------------------------------------>
-   <div class = "bottom-border">
-  <section>
-    <h2>Why Choose Sidemen Hotel Suites?</h2>
-    <p>Enjoy premium hospitality, seamless booking, and luxurious stays — all at your fingertips.</p>
-  </section>
+  <div class="bottom-border">
+    <section>
+      <h2>Why Choose Sidemen Hotel Suites?</h2>
+      <p>Enjoy premium hospitality, seamless booking, and luxurious stays — all at your fingertips.</p>
+    </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>Need help? Contact us at <a href="mailto:sidemen@hotelsuites.com">sidemen@hotelsuites.com</a></p>
-    <p>&copy; 2025 Sidemen Hotel Suites. All rights reserved.</p>
-  </footer>
+    <!-- Footer -->
+    <footer>
+      <p>Need help? Contact us at <a href="mailto:sidemen@hotelsuites.com">sidemen@hotelsuites.com</a></p>
+      <p>&copy; 2025 Sidemen Hotel Suites. All rights reserved.</p>
+    </footer>
   </div>
 <script src="scripts/confirmationpage.js"></script>
     
 </body>
+
 </html>
