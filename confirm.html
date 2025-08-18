@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmation</title>
+  <link rel="stylesheet" href="styles/confirmation.css">
+</head>
+<body>
+  <h1>🎉 Booking Confirmed!</h1>
+  <div id="confirmationDetails"></div>
+
+  <div style="margin-top: 20px;">
+    <a href="homepage.html" 
+       style="display: inline-block; padding: 12px 24px; background-color: #007bff; color: white; 
+              text-decoration: none; font-weight: bold; border-radius: 6px; transition: 0.3s;">
+      ⬅ Return to Homepage
+    </a>
+  </div>
+
+  <script>
+    const booking = JSON.parse(localStorage.getItem("lastBooking") || "{}");
+
+    if (booking.room) {
+      document.getElementById("confirmationDetails").innerHTML = `
+        <p><strong>Room:</strong> ${booking.room}</p>
+        <p><strong>Price:</strong> ${booking.roomPrice}</p>
+        <p><strong>Total:</strong> ${booking.total}</p>
+        <p><strong>Name:</strong> ${booking.guest.firstName} ${booking.guest.lastName}</p>
+        <p><strong>Email:</strong> ${booking.guest.email}</p>
+      `;
+    } else {
+      document.getElementById("confirmationDetails").innerHTML = `<p>No booking found.</p>`;
+    }
+  </script>
+</body>
+</html>
