@@ -34,13 +34,13 @@ class Database
             die("Connection failed: " . $conn->connect_error);
         }
 
-        echo "Connected successfully";
+        //echo "Connected successfully";
 
         $this->connection = $conn;
-        //return $conn;
+        return $conn;
     }
     //have insert return the last id in the booking table as a booking id
-    public function insert($f_name, $l_name, $email, $address, $zip, $city, $state, $creditcard, $cc_month, $cc_year)
+    public function insert($f_name, $l_name, $email, $phone, $address, $zip, $city, $state, $creditcard, $cc_month, $cc_year, $room)
     {
         //$is_successful = false;
 
@@ -48,6 +48,7 @@ class Database
              First_name,
              Last_name,
              email,
+             phone,
              Address,
              Zip,
              City,
@@ -60,6 +61,7 @@ class Database
                '$f_name',
                 '$l_name',
                 '$email',
+                '$phone',
                 '$address',
                 '$zip',
                 '$city',
@@ -72,7 +74,7 @@ class Database
 
 
         if ($this->connection->query($sql) === TRUE) {
-            echo "New Customer record created successfully";
+            //echo "New Customer record created successfully";
         } else {
             echo "
             Error: " . $sql . "<br>" . $this->connection->error;
@@ -80,7 +82,7 @@ class Database
 
         $last_custID = $this->connection->insert_id;
 
-        $sql2 = "INSERT INTO Bookings (CustomerID) VALUES ($last_custID)";
+        $sql2 = "INSERT INTO Bookings (CustomerID, Room_Type) VALUES ('$last_custID', '$room')";
 
         $last_bookingID = 0;
 
@@ -90,9 +92,8 @@ class Database
 
             $last_bookingID = $this->connection->insert_id;
 
-            echo "New Booking record created successfully";
-            echo "Thank you " . $f_name . " for your booking. Your booking ID is: " . $last_bookingID . ". A confirmation email
-            has been sent to " . $email;
+            //echo "New Booking record created successfully";
+            echo nl2br("\nThank you " . $f_name . " for your booking. Your booking ID is: " . $last_bookingID . ". \nA confirmation email has been sent to " . $email);
         } else {
             echo "
             Error: " . $sql2 . "<br>" . $this->connection->error;

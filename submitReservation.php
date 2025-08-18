@@ -1,42 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
 
-<?php
-//echo phpinfo();
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidemen Hotels/Reserve a Room</title>
+    <link rel="stylesheet" href="styles/SandR.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+</head>
 
-include_once("Database.php");
+<body>
+    <!--BAR WHICH INCLUDES TITLE,QUOTE< AND THREE OPTIONS-->
+    <div class="top-border">
 
-$db = new Database();
-
-$db->connect();
-
-if ($db) {
-    echo "You are connected";
-} else {
-    echo "Could not connect";
-}
-
-
-
-
-
-
-
-/*
-$servername = "hoteldatabase.cx0k04cysbk2.us-east-2.rds.amazonaws.com";
-$username = "admin";
-$password = "Comp380DataBase";
-$dbName = "HotelDB";
-$conn = "";
-
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=HotelDB", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";
-} catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-} */
+        <div class="brand">
+            <a href="homepage.html" class="invisibleboarder">
+                <h1> SIDEMEN HOTEL SUITES</h1>
+                <p>LUXURY LIKE YOU HAVE NEVER SEEN BEFORE</p>
+            </a>
+        </div>
 
 
+        <div class="nav-links">
+            <a href="SandR.html">Search & Reserve a Room</a>
+            <a href="manage.html">Manage Your Reservation</a>
+            <a href="reports.php">Manager Reports</a>
+        </div>
+    </div>
+
+    <?php
+    //echo phpinfo();
+
+    include_once("Database.php");
+
+    $db = new Database();
+
+    $db->connect();
+
+    $roomType = null;
 
 
-?>
+    //handles single room
+    if (isset($_POST["singleSubmit"])) {
+        echo "IN SINGLE IF";
+        $roomType = 'single';
+    }
+
+    // handles double room
+    if (isset($_POST["doubleSubmit"])) {
+        echo "IN DOUBLE IF";
+        $roomType = 'double';
+    }
+
+    //handles suite room
+    if (isset($_POST["suiteSubmit"])) {
+        echo "IN SUITE IF";
+        $roomType = 'suite';
+    }
+
+    //handles presidential suite room
+    if (isset($_POST["pSuiteSubmit"])) {
+        echo "IN pSUITE IF";
+        $roomType = 'presidential suite';
+    }
+
+    if ($roomType) {
+
+        $f_name    = $_POST['first_name'];
+        $l_name    = $_POST['last_name'];
+        $email     = $_POST['email'];
+        $phone     = $_POST['phone'];
+        $address   = $_POST['address'];
+        $zip       = $_POST['zip'];
+        $city      = $_POST['city'];
+        $state     = $_POST['state'];
+        $creditcard = $_POST['cardnumber'];
+        $cc_month  = $_POST['month'];
+        $cc_year   = $_POST['year'];
+
+        $db->insert(
+            $f_name,
+            $l_name,
+            $email,
+            $phone,
+            $address,
+            $zip,
+            $city,
+            $state,
+            $creditcard,
+            $cc_month,
+            $cc_year,
+            $roomType
+        );
+    }
+
+
+
+
+    ?>
+
+
+</body>
+
+</html>
