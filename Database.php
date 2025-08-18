@@ -111,63 +111,68 @@ class Database
 
         $result = $conn->query($sqlCustID);
 
-        $row = $result->fetch_assoc();
+        if ($result && $result->num_rows > 0) {
 
-        $custID = (int)$row["CustomerID"];
+            $row = $result->fetch_assoc();
 
-
-
-
-        $sql = "DELETE FROM Bookings WHERE BookingID = $bookingId";
-
-
-        //Delete booking by booking ID
-
-        if ($conn->query($sql) === TRUE) {
-            echo "Booking ID deleted successfully";
-        } else {
-            echo "Error deleting record: " . $conn->error;
-        }
+            $custID = (int)$row["CustomerID"];
 
 
 
 
+            $sql = "DELETE FROM Bookings WHERE BookingID = $bookingId";
 
 
+            //Delete booking by booking ID
 
-        $sqlGetCustInfo = "SELECT First_name, email FROM Customer WHERE id = $custID";
-
-        $result2 = $conn->query($sqlGetCustInfo);
-
-        $row2 = $result2->fetch_assoc();
-
-        $f_name =  $row2['First_name'];
-
-        $email = $row2['email'];
-
-
-
-
-        $sqlCount = "SELECT COUNT(*) AS cnt FROM Bookings WHERE CustomerID = $custID";
-
-        $result3 = $conn->query($sqlCount);
-
-        $cnt = 0;
-
-        if ($result3) {
-            $row3 = $result3->fetch_assoc();
-            $cnt = (int)$row3['cnt'];
-        }
-
-        if ($cnt === 0) {
-            $sqlDelCust = "DELETE FROM Customer WHERE id = $custID";
-            if ($conn->query($sqlDelCust) === TRUE) {
-                echo "Booking $bookingId deleted. Thank you " .  $f_name . "Email sent to: " . $email;
+            if ($conn->query($sql) === TRUE) {
+                echo "Booking ID deleted successfully";
             } else {
-                echo "Booking deleted, but failed to delete customer: " . $conn->error;
+                echo "Error deleting record: " . $conn->error;
             }
-        } else
-            echo "Booking $bookingId deleted. Thank you " .  $f_name . "Email sent to: " . $email; {
+
+
+
+
+
+
+
+            $sqlGetCustInfo = "SELECT First_name, email FROM Customer WHERE id = $custID";
+
+            $result2 = $conn->query($sqlGetCustInfo);
+
+            $row2 = $result2->fetch_assoc();
+
+            $f_name =  $row2['First_name'];
+
+            $email = $row2['email'];
+
+
+
+
+            $sqlCount = "SELECT COUNT(*) AS cnt FROM Bookings WHERE CustomerID = $custID";
+
+            $result3 = $conn->query($sqlCount);
+
+            $cnt = 0;
+
+            if ($result3) {
+                $row3 = $result3->fetch_assoc();
+                $cnt = (int)$row3['cnt'];
+            }
+
+            if ($cnt === 0) {
+                $sqlDelCust = "DELETE FROM Customer WHERE id = $custID";
+                if ($conn->query($sqlDelCust) === TRUE) {
+                    echo "Booking $bookingId deleted. Thank you " .  $f_name . "Email sent to: " . $email;
+                } else {
+                    echo "Booking deleted, but failed to delete customer: " . $conn->error;
+                }
+            } else
+                echo "Booking $bookingId deleted. Thank you " .  $f_name . "Email sent to: " . $email; {
+            }
+        } else {
+            echo "No such Booking ID exists!";
         }
     }
 }
