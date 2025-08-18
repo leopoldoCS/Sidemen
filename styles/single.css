@@ -205,9 +205,9 @@ align-items: center;
   padding-top: 1rem;
 } /*HELLO*/
 
-/*-------------------------FOR THE CODE TO ADAPT TO ALL SCREEN SIZES-------->
+/*-------------------------FOR THE CODE TO ADAPT TO ALL SCREEN SIZES--------*/
 /*1920*/
-@media(max-width:1920px){
+@media(min-width:1920px){
 .top-border {
   height: 8rem;
 }
@@ -245,7 +245,7 @@ font-size: 3rem;
   margin: -13rem 0rem 0rem 35rem;
 }
 .roompic img{
-  width:45rem;
+  width:40rem;
   height:auto;
 }
 .roompic h2{
@@ -256,7 +256,6 @@ font-size: 3rem;
 }
 .bottom-border section {
   max-width: 90rem;
-
 }
 .bottom-border {
   height: 20rem;
