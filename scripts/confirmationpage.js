@@ -1,3 +1,14 @@
+/*
+8/7/205
+
+Author: Ali
+
+Performs actions related to processing the confirmation of a booking.
+
+The booking gets all related fields the user enters.
+
+*/
+
 document.addEventListener("DOMContentLoaded", function () {
   const confirmBtn = document.querySelector(".ConfirmButton");
 

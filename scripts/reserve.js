@@ -1,3 +1,13 @@
+/*
+8/7/205
+
+Author: Ali
+
+Performs actions related to a reservation
+
+THe code handles logic related to a reservation and the selected rooms. It also handles information related to the reservation.
+
+*/
 document.addEventListener("DOMContentLoaded", () => {
     const room = JSON.parse(sessionStorage.getItem("selectedRoom"));
     const roomDetails = document.getElementById("roomDetails");
