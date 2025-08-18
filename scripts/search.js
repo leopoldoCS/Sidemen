@@ -1,4 +1,17 @@
+  /*
+8/7/205
 
+Author: Ali
+
+Performs actions related to searching for rooms, reserving rooms, and generating booking reports. 
+
+THe code handles logic related to searching and reserving rooms. It also handles information related to generating booking reports.
+
+THe code utilizes functions searchRooms(), reserveRoom(roomNumber, roomType, price), and generateBookingReport().
+
+The code utilizes an array of bookings.
+
+*/
    const bookings = [];
 
     function searchRooms() {
@@ -61,7 +74,10 @@
       console.log("Booking added:", booking); //
       alert(`Booking confirmed for ${customerName}. Confirmation sent to ${email}.`);
     }
-
+   /**
+    * 
+    * @returns empty test search.js
+    */
     function generateBookingReport() {
       const reportDiv = document.getElementById("bookingReport");
 

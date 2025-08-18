@@ -1,0 +1,30 @@
+{
+  "name": "sidemen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "calendar.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leopoldoCS/Sidemen.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/leopoldoCS/Sidemen/issues"
+  },
+  "homepage": "https://github.com/leopoldoCS/Sidemen#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql2": "^3.14.3",
+    "nodemon": "^3.1.10",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "jest": "^30.0.5"
+  }
+}
