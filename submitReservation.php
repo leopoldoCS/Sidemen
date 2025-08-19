@@ -44,25 +44,25 @@
 
     //handles single room
     if (isset($_POST["singleSubmit"])) {
-        echo "IN SINGLE IF";
+        //echo "IN SINGLE IF";
         $roomType = 'single';
     }
 
     // handles double room
     if (isset($_POST["doubleSubmit"])) {
-        echo "IN DOUBLE IF";
+        //echo "IN DOUBLE IF";
         $roomType = 'double';
     }
 
     //handles suite room
     if (isset($_POST["suiteSubmit"])) {
-        echo "IN SUITE IF";
+        //echo "IN SUITE IF";
         $roomType = 'suite';
     }
 
     //handles presidential suite room
     if (isset($_POST["pSuiteSubmit"])) {
-        echo "IN pSUITE IF";
+        //echo "IN pSUITE IF";
         $roomType = 'presidential suite';
     }
 

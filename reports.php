@@ -107,7 +107,7 @@
     ?>
 
   <!-- Load the JS file -->
-  <script src="scripts/reports.js"></script> 
+  <!-- <script src="scripts/reports.js"></script> -->
 </body>
 
 </html>

@@ -164,12 +164,12 @@ class Database
             if ($cnt === 0) {
                 $sqlDelCust = "DELETE FROM Customer WHERE id = $custID";
                 if ($conn->query($sqlDelCust) === TRUE) {
-                    echo "Booking $bookingId deleted. Thank you " .  $f_name . "Email sent to: " . $email;
+                    echo nl2br("\nBooking $bookingId deleted. Thank you " .  $f_name . ", confirmation email sent to: " . $email);
                 } else {
                     echo "Booking deleted, but failed to delete customer: " . $conn->error;
                 }
             } else
-                echo "Booking $bookingId deleted. Thank you " .  $f_name . "Email sent to: " . $email; {
+                echo nl2br("\nBooking $bookingId deleted. Thank you " .  $f_name . ", confirmation email sent to: " . $email); {
             }
         } else {
             echo "No such Booking ID exists!";
